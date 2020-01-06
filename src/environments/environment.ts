@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  stsUrl: 'https://localhost:5007/',
-  apiUrl: 'https://localhost:5005',
+  stsUrl: 'https://aspnetcorests.herokuapp.com/',
+  apiUrl: 'https://aspnetcorespa.herokuapp.com',
 };

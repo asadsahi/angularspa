@@ -29,22 +29,6 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
-    // Check cookie consent
-    setTimeout(() => {
-      if (this.appService.appData.cookieConsent.showConsent) {
-        this.modalService
-          .open({
-            title: 'Cookie consent',
-            message: 'Use this space to summarize your privacy and cookie use policy.',
-          })
-          .then(
-            () => {
-              document.cookie = this.appService.appData.cookieConsent.cookieString;
-            },
-            () => {},
-          );
-      }
-    }, 0);
   }
 
   public getState(outlet: any) {

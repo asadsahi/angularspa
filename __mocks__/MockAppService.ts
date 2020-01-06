@@ -3,8 +3,7 @@ export class MockAppService {
     return <any>{
       content: {},
       cultures: [{}],
-      cookieConsent: {},
-      loginProviders: {}
+      loginProviders: {},
     };
   }
 }
