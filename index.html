@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <title></title>
+
+    <base href="angularspa">    <meta charset="utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/icon-192x192.png" />
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+
+    <meta name="theme-color" content="#1976d2" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="urlpath" />
+    <meta property="og:image" content="/assets/icons/icon-192x192.png" />
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="180" />
+
+    <meta name="msapplication-square150x150logo" content="/assets/icons/icon-152x152.png" />
+    <link rel="edituri" type="application/rsd+xml" title="RSD" href="~/rsd.xml" />
+    <link rel="alternate" type="application/rss+xml" href="~/feed/rss/" />
+    <link rel="alternate" type="application/atom+xml" href="~/feed/atom/" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+    <style>
+      #overlay {
+        background: #ffffff;
+        color: #666666;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 5000;
+        top: 0;
+        left: 0;
+        float: left;
+        text-align: center;
+        padding-top: 25%;
+        opacity: 0.8;
+      }
+
+      .spinner {
+        margin: 0 auto;
+        height: 64px;
+        width: 64px;
+        animation: rotate 0.8s infinite linear;
+        border: 5px solid #005774;
+        border-right-color: transparent;
+        border-radius: 50%;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  <link rel="stylesheet" href="styles.7624e9c02ddd979e2e20.css"></head>
+
+  <body>
+    <div class="container">
+      <appc-root>
+        <div id="overlay">
+          <div class="spinner"></div>
+          <br />
+          Loading...
+        </div>
+      </appc-root>
+    </div>
+
+    <noscript>
+      <p>
+        Sorry, JavaScript must be enabled to use this app
+      </p>
+    </noscript>
+  <script src="runtime-es2015.8ca81565bf5744c6af01.js" type="module"></script><script src="runtime-es5.8ca81565bf5744c6af01.js" nomodule defer></script><script src="polyfills-es5.f067f5f913bead2cd167.js" nomodule defer></script><script src="polyfills-es2015.25ff13674b3056b14f77.js" type="module"></script><script src="main-es2015.001fbc888d6292591150.js" type="module"></script><script src="main-es5.001fbc888d6292591150.js" nomodule defer></script></body>
+</html>
