@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1578402409847,
+  "timestamp": 1578405045999,
   "appData": {
     "name": "AngularSpa"
   },
@@ -18,8 +18,8 @@
         "/angularspa/7-es2015.b23083bab100a238b337.js",
         "/angularspa/7-es5.b23083bab100a238b337.js",
         "/angularspa/index.html",
-        "/angularspa/main-es2015.90301e89d76903bc7944.js",
-        "/angularspa/main-es5.90301e89d76903bc7944.js",
+        "/angularspa/main-es2015.8ea6374eadb0121db26c.js",
+        "/angularspa/main-es5.8ea6374eadb0121db26c.js",
         "/angularspa/polyfills-es2015.25ff13674b3056b14f77.js",
         "/angularspa/polyfills-es5.f067f5f913bead2cd167.js",
         "/angularspa/runtime-es2015.8ca81565bf5744c6af01.js",
@@ -112,9 +112,9 @@
     "/angularspa/assets/styles/fonts/data-table.ttf": "5c23a1ceb1b1d37844a864c02cd97b145e6243dd",
     "/angularspa/assets/styles/fonts/data-table.woff": "d4582b40484b4ee1fd334a5577fd945e804484f9",
     "/angularspa/assets/styles/icons.css": "c8a087dccde308bf675ac693e2c26a9ea050e5cd",
-    "/angularspa/index.html": "d9ad45b7a2eb9aa52bab00fadc9b9443cc51bad6",
-    "/angularspa/main-es2015.90301e89d76903bc7944.js": "66794a542b38cfec2a214ffabd51e1ce5206f1a0",
-    "/angularspa/main-es5.90301e89d76903bc7944.js": "29ff7ee38e72504d828ba312acdac185bdf3f577",
+    "/angularspa/index.html": "7fa92c8b4f04f7e9535beebc18917a6a9f79e7fd",
+    "/angularspa/main-es2015.8ea6374eadb0121db26c.js": "56f33c7bade3af353ba30115db317039a94e8bc9",
+    "/angularspa/main-es5.8ea6374eadb0121db26c.js": "b335a28358a38e984573eeb7d1881eaa536b2771",
     "/angularspa/polyfills-es2015.25ff13674b3056b14f77.js": "8d657a1a62b4a0583fdebe73e9b4203b5d20657e",
     "/angularspa/polyfills-es5.f067f5f913bead2cd167.js": "1de092a877eae2472c224b8bf3762a49dfc53a06",
     "/angularspa/runtime-es2015.8ca81565bf5744c6af01.js": "a13f2d23e26f8ff2bdfd88e672efdf48dff8cacc",
