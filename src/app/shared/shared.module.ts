@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { NgbModule, NgbDateParserFormatter, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AgGridModule } from 'ag-grid-angular';
 
 import {
@@ -78,6 +79,7 @@ export function appServiceFactory(appService: AppService): () => Promise<any> {
     ReactiveFormsModule,
     NgbModule,
     NgbModule,
+    FontAwesomeModule,
     AgGridModule.withComponents([ActionButtonsComponent, ActionButtonComponent, DateFilterComponent, DropdownFloatingFilterComponent]),
     RouterModule.forChild([
       { path: ApplicationPaths.Register, component: LoginComponent },

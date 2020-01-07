@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { AuthorizeService } from '../../services';
 
@@ -12,7 +13,10 @@ import { AuthorizeService } from '../../services';
 export class LoginMenuComponent implements OnInit {
   public isAuthenticated: Observable<boolean>;
   public userName: Observable<string>;
-
+  icons = {
+    faSignInAlt,
+    faSignOutAlt,
+  };
   constructor(private authorizeService: AuthorizeService) {}
 
   ngOnInit() {
