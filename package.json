@@ -15,6 +15,7 @@
     "ng": "ng",
     "clean:install": "rimraf node_modules & npm i",
     "start": "ng serve",
+    "start:gh": "ng serve --baseHref /angularspa/ --deployUrl /angularspa/",
     "build": "ng build --prod",
     "build:ssr": "npm run build --project=ssr",
     "lint": "ng lint",
