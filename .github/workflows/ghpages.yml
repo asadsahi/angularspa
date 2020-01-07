@@ -13,7 +13,7 @@ jobs:
       - name: Install
         run: npm install
       - name: Build
-        run: npm run build -- --base-href angularspa
+        run: npm run build
       - name: Deploy
         # https://github.com/peaceiris/actions-gh-pages#1-add-ssh-deploy-key
         uses: peaceiris/actions-gh-pages@v2
