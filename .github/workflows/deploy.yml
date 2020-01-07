@@ -7,8 +7,8 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: ngspa # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: "./dist" # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: "12.x" # set this to the node version to use
+  AZURE_WEBAPP_PACKAGE_PATH: './dist' # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '12.x' # set this to the node version to use
 
 jobs:
   build-and-deploy:
@@ -20,13 +20,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: install, test and build
-        run: |
-          # Build and test the project, then
-          # deploy to Azure Web App.
-          npm install
-          # npm run test --if-present
-          npm run build --if-present
+      - name: Install
+        run: npm install
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build
       - name: Archive Artifact
         uses: actions/upload-artifact@master
         with:
@@ -34,7 +33,7 @@ jobs:
           path: dist
 
       # AZURE
-      - name: "Deploy to Azure"
+      - name: Azure
         uses: azure/webapps-deploy@v1
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
@@ -42,7 +41,7 @@ jobs:
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       # FIREBASE
-      - name: Deploy to Firebase
+      - name: Firebase
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
@@ -50,13 +49,13 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
       # SURGE
-      - name: Deploy to Surge
+      - name: Surge
         run: |
           npm install -g surge
           surge ./dist ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
 
       # GITHUB PAGES
-      - name: Deploy to Github Pages
+      - name: Github Pages
         run: |
           npm run build -- --output-path build --base-href /angularspa/
           cp build/index.html build/404.html
