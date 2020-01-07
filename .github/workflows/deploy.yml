@@ -51,8 +51,9 @@ jobs:
 
       # SURGE
       - name: Deploy to Surge
-        run: npm install -g surge
-        run: surge ./dist ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+        run: |
+          npm install -g surge
+          surge ./dist ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
 
       # GITHUB PAGES
       - name: Deploy to Github Pages
