@@ -4,6 +4,7 @@ export * from './interceptors';
 export * from './app.service';
 export * from './global-error.service';
 export * from './data.service';
+export * from './sw-update.service';
 export * from './modal-state.service';
 export * from './modal.service';
 export * from './toast.service';

@@ -3,7 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 
 // import { routerTransition } from './router.animations';
-import { AppService, ModalService } from '@app/shared';
+import { AppService, SwUpdateService } from '@app/shared';
 @Component({
   selector: 'appc-root',
   // animations: [routerTransition],
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     private title: Title,
     private meta: Meta,
     private appService: AppService,
-    private modalService: ModalService,
+    private swUpdateService: SwUpdateService,
   ) {}
 
   public ngOnInit() {
@@ -29,6 +29,8 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
+
+    this.swUpdateService.checkForUpdates();
   }
 
   public getState(outlet: any) {
