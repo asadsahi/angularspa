@@ -24,7 +24,7 @@
     "test:ci": "jest --runInBand",
     "test:coverage": "jest --coverage",
     "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json",
-    "analyze": "npm run build -- --stats-json && webpack-bundle-analyzer dist/angularspa/stats.json"
+    "analyze": "npm run build -- --stats-json && webpack-bundle-analyzer dist/stats.json"
   },
   "dependencies": {
     "@angular/animations": "8.2.14",
