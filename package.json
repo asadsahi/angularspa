@@ -24,7 +24,8 @@
     "test:ci": "jest --runInBand",
     "test:coverage": "jest --coverage",
     "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json",
-    "analyze": "npm run build -- --stats-json && webpack-bundle-analyzer dist/stats-es2015.json"
+    "analyze": "npm run build -- --stats-json && webpack-bundle-analyzer dist/stats-es2015.json",
+    "swtest": "npx http-server dist -p 4200"
   },
   "dependencies": {
     "@angular/animations": "8.2.14",
@@ -66,13 +67,21 @@
     "@types/jest": "^24.0.25",
     "@types/node": "13.1.4",
     "codelyzer": "^5.2.1",
+    "husky": "^4.0.1",
     "jest": "^24.9.0",
     "jest-preset-angular": "^8.0.0",
+    "prettier": "1.19.1",
+    "pretty-quick": "^2.0.1",
     "protractor": "5.4.2",
     "ts-node": "8.5.4",
     "tslint": "5.20.1",
     "typescript": "~3.5.3",
     "webpack-bundle-analyzer": "3.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s format:check lint"
+    }
   },
   "jest": {
     "preset": "jest-preset-angular",

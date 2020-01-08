@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
+    this.swUpdateService.checkForUpdate();
     console.log(this.appService.appData);
 
     this.updateTitleAndMeta();
@@ -29,8 +30,6 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
-
-    this.swUpdateService.checkForUpdates();
   }
 
   public getState(outlet: any) {

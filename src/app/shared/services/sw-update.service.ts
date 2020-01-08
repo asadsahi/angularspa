@@ -1,35 +1,33 @@
 import { Injectable } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
-import { interval } from 'rxjs';
+import { SwUpdate, UpdateAvailableEvent } from '@angular/service-worker';
 import { ModalService } from './modal.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SwUpdateService {
-  constructor(public updates: SwUpdate, private modalService: ModalService) {
-    if (updates.isEnabled) {
-      interval(6 * 60 * 60).subscribe(() => updates.checkForUpdate().then(() => console.log('checking for updates')));
+  constructor(public swUpdate: SwUpdate, private modalService: ModalService) {}
+
+  checkForUpdate() {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe((event: UpdateAvailableEvent) => {
+        this.promptUser(event);
+      });
     }
   }
 
-  public checkForUpdates(): void {
-    if (this.updates.isEnabled) {
-      this.updates.available.subscribe(event => this.promptUser());
-    }
-  }
-
-  private promptUser(): void {
+  private promptUser(event: UpdateAvailableEvent) {
     this.modalService
-      .open({
+      .warn({
         title: 'App Update',
-        message: 'An updated version of app is available, do you want to update?',
-        okLabel: 'Yes',
-        cancelLabel: 'No',
+        message: 'An updated version of app is available, window will reload',
+        okLabel: 'Ok',
       })
       .then(
         () => {
-          this.updates.activateUpdate().then(() => document.location.reload());
+          this.swUpdate.activateUpdate().then(() => {
+            document.location.reload();
+          });
         },
         () => {},
       );
