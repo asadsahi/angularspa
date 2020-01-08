@@ -1,21 +1,21 @@
-import { ErrorHandler, Injectable, Injector } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GlobalErrorHandler implements ErrorHandler {
-  constructor(private injector: Injector) {}
+  constructor(private toastService: ToastService) {}
 
   handleError(errorResponse: any): void {
     if (errorResponse.status === 401) {
-      this.injector.get(ToastService).danger('Unauthorised: Please login again.');
+      this.toastService.danger('Unauthorised: Please login again.');
     } else if (errorResponse.status === 400) {
-      this.injector.get(ToastService).danger(this.formatErrors(errorResponse.error.errors));
+      this.toastService.danger(this.formatErrors(errorResponse.error.errors));
     } else {
       // All other errors including 500
       const error = errorResponse && errorResponse.rejection ? errorResponse.rejection.error : errorResponse;
-      this.injector.get(ToastService).danger(error);
+      this.toastService.danger(error);
       // IMPORTANT: Don't Rethrow the error otherwise it will not emit errors after once
       // https://stackoverflow.com/questions/44356040/angular-global-error-handler-working-only-once
       // throw errorResponse;
